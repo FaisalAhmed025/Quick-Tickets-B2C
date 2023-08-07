@@ -1,10 +1,9 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete,  HttpException, HttpStatus, UseInterceptors, UploadedFiles, Req, Res, NotFoundException } from '@nestjs/common';
 import { DepositService } from './deposit.service';
 import { CreateDepositDto } from './dto/create-deposit.dto';
-import { UpdateDepositDto } from './dto/update-deposit.dto';
 import { Deposit, PaymentStatus } from './entities/deposit.entity';
 import { Repository } from 'typeorm';
-import axios from 'axios';
+
 import { InjectRepository } from '@nestjs/typeorm';
 import { Request, Response } from 'express';
 import { User } from 'src/user/entities/user.entity';
@@ -13,6 +12,7 @@ import { UserService } from 'src/user/user.service';
 import { createHash } from 'crypto';
 import { ApiBearerAuth,ApiBody, ApiConsumes, ApiTags } from '@nestjs/swagger';
 import { FileFieldsInterceptor } from '@nestjs/platform-express';
+import { GeneralLedger } from 'src/ledger/entity';
 
 @ApiTags('deposit')
 @Controller('deposit')
@@ -20,7 +20,7 @@ export class DepositController {
   constructor(
     @InjectRepository(User) private userrepository: Repository<User>,
     @InjectRepository(Deposit) private depositrepository: Repository<Deposit>,
-    // @InjectRepository(GeneralLedger) private GeneralLedgerpository: Repository<GeneralLedger>,
+    @InjectRepository(GeneralLedger) private GeneralLedgerpository: Repository<GeneralLedger>,
     private readonly depositservice: DepositService,
     private s3service: GCSStorageService,
     private readonly userService: UserService
