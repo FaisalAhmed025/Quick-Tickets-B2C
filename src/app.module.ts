@@ -29,7 +29,7 @@ import { GeneralLedger } from './ledger/entity';
       // database:'quickticketsb2c',
       port:3306,
       entities: [User,Traveller, Deposit,GeneralLedger],
-      synchronize:true,
+      synchronize:false,
       
     }),
     UserModule,
