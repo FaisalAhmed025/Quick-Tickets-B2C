@@ -8,7 +8,6 @@ import { Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import * as nodemailer from 'nodemailer';
 import { JwtService } from '@nestjs/jwt';
-require("dotenv").config();
 
 @Injectable()
 export class UserService {
