@@ -2,10 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
-
+const port =5000
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  app.enableCors()
   const config = new DocumentBuilder()
     .setTitle('quickticketsb2c')
     .setDescription('quickticketsb2c API description')
@@ -15,6 +14,6 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-  await app.listen(5000);
+  await app.listen(port);
 }
 bootstrap();
