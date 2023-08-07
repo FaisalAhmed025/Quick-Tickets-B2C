@@ -1,5 +1,4 @@
 import { Controller, Post, Param, HttpException, HttpStatus, Req, Res } from '@nestjs/common';
-
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { Repository } from 'typeorm';
@@ -28,6 +27,8 @@ export class AmarpayController {
     const shortenedHash = hash.substr(0, 16).toUpperCase();
     return shortenedHash;
   }
+
+
 
   @ApiBearerAuth()
   @Post('payment')
