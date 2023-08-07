@@ -16,7 +16,7 @@ export class Deposit {
    @BeforeInsert()
    generateUserId() {
       depositIdCounter++;
-    this.depositid = `FFD${depositIdCounter}`;
+      this.depositid = `FFD${depositIdCounter}`;
  }
    @Column()
    userID: string;

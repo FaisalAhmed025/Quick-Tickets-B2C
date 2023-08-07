@@ -41,8 +41,8 @@ async init(
   const {amount} =req.body
 
   const data ={ 
-  store_id: process.env.SSL_STORE_ID,
-  store_passwd: process.env.SSL_STORE_PASSWORD,
+  store_id: 'flyfarintlive',
+  store_passwd:'5D19E28E2FBE477822',
   total_amount:amount,
   currency: "BDT",
   tran_id: transactionId,

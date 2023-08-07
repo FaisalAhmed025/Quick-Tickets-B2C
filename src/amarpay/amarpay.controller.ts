@@ -1,5 +1,5 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, HttpException, HttpStatus, Req, Res } from '@nestjs/common';
-import { AmarpayService } from './amarpay.service';
+import { Controller, Post, Param, HttpException, HttpStatus, Req, Res } from '@nestjs/common';
+
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { Repository } from 'typeorm';
