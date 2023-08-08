@@ -71,7 +71,7 @@ export class AmarpayController {
       cus_city: cus_city || 'Dhaka',
       paymentgatway: paymentgatway || '',
       cus_country: cus_country || 'Bangladesh',
-      success_url: `http://localhost:3000/amarpay/callback/${transactionId}`,
+      success_url: `https://feisty-well-395204.an.r.appspot.com/amarpay/callback/${transactionId}`,
       fail_url: 'http://localhost:3000/fail',
       cancel_url: 'http://localhost:3000/cancel',
       type: 'json',

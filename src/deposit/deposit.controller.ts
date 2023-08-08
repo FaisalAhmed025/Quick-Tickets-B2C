@@ -3,7 +3,6 @@ import { DepositService } from './deposit.service';
 import { CreateDepositDto } from './dto/create-deposit.dto';
 import { Deposit, PaymentStatus } from './entities/deposit.entity';
 import { Repository } from 'typeorm';
-
 import { InjectRepository } from '@nestjs/typeorm';
 import { Request, Response } from 'express';
 import { User } from 'src/user/entities/user.entity';
@@ -70,7 +69,6 @@ export class DepositController {
     file: {
       attachment?: Express.Multer.File[]
     },
-
     @Req() req: Request,
     @Res() res: Response,
     @Body() depositrequestdto:CreateDepositDto
